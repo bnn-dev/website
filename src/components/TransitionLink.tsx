@@ -31,14 +31,14 @@ export function TransitionLink({ to, className, style, children, preserveSearch 
 
         const fullPath = getFullPath() as Routes;
 
-        if (document.startViewTransition) {
-            document.startViewTransition(async () => {
-                await router.push(fullPath);
-            });
+        if (!document.startViewTransition) {
+            router.push(fullPath);
             return;
         }
 
-        router.push(fullPath);
+        document.startViewTransition(() => {
+            router.push(fullPath);
+        });
     };
 
     const href = preserveSearch && typeof window !== 'undefined' 
