@@ -11,7 +11,7 @@ export default async function HomePage() {
                 <div className="subtitle">
                     <span className="subtitle-left">SWE</span>
                     <span className="pipe">|</span>
-                    <span className="subtitle-right">CYENG</span>
+                    <span className="subtitle-right">SecEng</span>
                 </div>
                 <p className="quote">Simplicity is the ultimate sophistication</p>
                 <nav className="links">
