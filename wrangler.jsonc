@@ -3,6 +3,10 @@
   "main": "./dist/server/serve-cloudflare.js",
   "compatibility_date": "2025-11-17",
   "compatibility_flags": ["nodejs_compat"],
+  "routes": [
+    { "pattern": "bnn.dev", "custom_domain": true },
+    { "pattern": "www.bnn.dev", "custom_domain": true }
+  ],
   "assets": {
     "binding": "ASSETS",
     "directory": "./dist/public",
