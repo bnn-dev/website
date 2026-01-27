@@ -720,8 +720,9 @@ body {
   }
 
   .quote {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding: 0 0.5rem;
+    white-space: nowrap;
   }
 
   .quote::before,
