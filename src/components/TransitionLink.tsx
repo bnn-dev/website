@@ -3,12 +3,8 @@
 import { useRouter } from 'waku';
 import type { ReactNode, MouseEvent, CSSProperties } from 'react';
 
-type ArgumentTypes<F extends Function> = F extends (...args: infer A) => any ? A : never;
-
-type Routes = ArgumentTypes<ReturnType<typeof useRouter>['push']>[0];
-
 interface TransitionLinkProps {
-    to: Routes;
+    to: string;
     className?: string;
     style?: CSSProperties;
     children: ReactNode;
@@ -28,25 +24,19 @@ export function TransitionLink({ to, className, style, children, preserveSearch 
 
     const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault();
+        const fullPath = getFullPath();
 
-        const fullPath = getFullPath() as Routes;
-
-        if (!document.startViewTransition) {
-            router.push(fullPath);
-            return;
+        if (document.startViewTransition) {
+            document.startViewTransition(() => {
+                router.push(fullPath as any);
+            });
+        } else {
+            router.push(fullPath as any);
         }
-
-        document.startViewTransition(() => {
-            router.push(fullPath);
-        });
     };
 
-    const href = preserveSearch && typeof window !== 'undefined' 
-        ? getFullPath() 
-        : to;
-
     return (
-        <a href={href} onClick={handleClick} className={className} style={style}>
+        <a href={to} onClick={handleClick} className={className} style={style}>
             {children}
         </a>
     );
