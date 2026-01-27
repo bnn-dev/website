@@ -1,5 +1,6 @@
 {
   "name": "bogdan-nikolov-portfolio",
+  "main": "./dist/server/serve-cloudflare.js",
   "compatibility_date": "2025-11-17",
   "compatibility_flags": ["nodejs_als"],
   "assets": {
