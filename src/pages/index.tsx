@@ -1,11 +1,12 @@
 import { TransitionLink } from '../components/TransitionLink';
+import { OrthodoxCross } from '../components/OrthodoxCross';
 
 export default async function HomePage() {
     return (
         <div className="home-container">
             <TransitionLink to="/blog" className="right-link">Blog →</TransitionLink>
             <div className="home-content">
-                <div className="cross">☦</div>
+                <OrthodoxCross className="cross" />
                 <h1 className="name">Bogdan Nikolov</h1>
                 <div className="subtitle">
                     <span className="subtitle-left">SWE</span>
