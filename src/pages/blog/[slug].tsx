@@ -1,16 +1,22 @@
-import { readFileSync, readdirSync } from 'fs';
-import { join } from 'path';
 import type { PageProps } from 'waku/router';
 import { TransitionLink } from '../../components/TransitionLink';
 import { MarkdownContent } from '../../components/MarkdownContent';
-import { parseFrontmatter, type PostFrontmatter } from '../../lib/frontmatter';
+import { getPostBySlug, getAllSlugs } from '../../lib/posts';
 
 export default async function BlogPostPage({ slug }: PageProps<'/blog/[slug]'>) {
-    const mdPath = join(process.cwd(), 'writings', `${slug}.md`);
-    const markdown = readFileSync(mdPath, 'utf-8');
+    const post = getPostBySlug(slug);
 
-    const { frontmatter, body } = parseFrontmatter(markdown);
-    const post: PostFrontmatter = frontmatter;
+    if (!post) {
+        return (
+            <>
+                <TransitionLink to="/" className="left-link">← Home</TransitionLink>
+                <TransitionLink to="/blog" className="left-link-slug" preserveSearch>← Blog</TransitionLink>
+                <main className="main">
+                    <h1>Post not found</h1>
+                </main>
+            </>
+        );
+    }
 
     return (
         <>
@@ -26,18 +32,17 @@ export default async function BlogPostPage({ slug }: PageProps<'/blog/[slug]'>) 
                     </div>
                 </article>
 
-                <MarkdownContent content={body} />
+                <MarkdownContent content={post.content} />
             </main>
         </>
     );
 }
 
 export const getConfig = async () => {
-    const writingsDir = join(process.cwd(), 'writings');
-    const files = readdirSync(writingsDir).filter(file => file.endsWith('.md'));
+    const staticPaths = getAllSlugs();
 
     return {
         render: 'static',
-        staticPaths: files.map(file => file.replace('.md', '')),
+        staticPaths,
     } as const;
 };
