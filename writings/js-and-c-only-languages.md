@@ -172,6 +172,7 @@ Ready to actually learn instead of just prompting? Here are two solid resources 
 
 **For both C and JS fundamentals:**
 - [CodeCrafters](https://codecrafters.io/) - Build your own Redis, Git, Docker, etc. from scratch. No hand-holding, no frameworks, just you and the fundamentals. This is how you actually learn.
+- [getCracked](https://getcracked.io/) - If you really want to get cracked, you go here. They don't have C or JS yet (just C++, Python, and generic questions), but the questions there are really nice.
 
 Stop vibe coding. Start building. Your future self (and your future AI assistants) will thank you.
 
