@@ -32,8 +32,8 @@ export function TransitionLink({ to, className, style, children, preserveSearch 
         const fullPath = getFullPath() as Routes;
 
         if (document.startViewTransition) {
-            document.startViewTransition(() => {
-                router.push(fullPath);
+            document.startViewTransition(async () => {
+                await router.push(fullPath);
             });
             return;
         }
