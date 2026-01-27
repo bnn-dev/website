@@ -1,4 +1,4 @@
-import { TransitionLink } from '../../components/TransitionLink';
+import { Link } from 'waku';
 import { PageNav } from '../../components/PageNav';
 import { BlogList } from '../../components/BlogList';
 import { getAllPosts } from '../../lib/posts';
@@ -9,7 +9,7 @@ export default async function BlogPage() {
     return (
         <>
             <PageNav>
-                <TransitionLink to="/" className="page-nav-link">← Home</TransitionLink>
+                <Link to="/" className="page-nav-link">← Home</Link>
             </PageNav>
             <main className="main">
             <div className="blog-header">

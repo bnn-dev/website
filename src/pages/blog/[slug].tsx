@@ -1,5 +1,5 @@
 import type { PageProps } from 'waku/router';
-import { TransitionLink } from '../../components/TransitionLink';
+import { Link } from 'waku';
 import { PageNav } from '../../components/PageNav';
 import { MarkdownContent } from '../../components/MarkdownContent';
 import { getPostBySlug, getAllSlugs } from '../../lib/posts';
@@ -11,8 +11,8 @@ export default async function BlogPostPage({ slug }: PageProps<'/blog/[slug]'>) 
         return (
             <>
                 <PageNav>
-                    <TransitionLink to="/" className="page-nav-link">← Home</TransitionLink>
-                    <TransitionLink to="/blog" className="page-nav-link" preserveSearch>← Blog</TransitionLink>
+                    <Link to="/" className="page-nav-link">← Home</Link>
+                    <Link to="/blog" className="page-nav-link">← Blog</Link>
                 </PageNav>
                 <main className="main">
                     <h1>Post not found</h1>
@@ -24,8 +24,8 @@ export default async function BlogPostPage({ slug }: PageProps<'/blog/[slug]'>) 
     return (
         <>
             <PageNav>
-                <TransitionLink to="/" className="page-nav-link">← Home</TransitionLink>
-                <TransitionLink to="/blog" className="page-nav-link" preserveSearch>← Blog</TransitionLink>
+                <Link to="/" className="page-nav-link">← Home</Link>
+                <Link to="/blog" className="page-nav-link">← Blog</Link>
             </PageNav>
             <main className="main">
                 <article className="post-header">
