@@ -1,29 +1,9 @@
-import { readFileSync, readdirSync } from 'fs';
-import { join } from 'path';
 import { TransitionLink } from '../../components/TransitionLink';
 import { BlogList } from '../../components/BlogList';
-import { parseFrontmatter, type PostFrontmatter } from '../../lib/frontmatter';
-
-interface Post extends PostFrontmatter {
-    slug: string;
-}
+import { getAllPosts } from '../../lib/posts';
 
 export default async function BlogPage() {
-    const writingsDir = join(process.cwd(), 'writings');
-
-    const files = readdirSync(writingsDir).filter(file => file.endsWith('.md'));
-
-    const posts: Post[] = files.map(file => {
-        const slug = file.replace('.md', '');
-        const filePath = join(writingsDir, file);
-        const content = readFileSync(filePath, 'utf-8');
-        const { frontmatter } = parseFrontmatter(content);
-
-        return {
-            slug,
-            ...frontmatter
-        };
-    }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    const posts = getAllPosts();
 
     return (
         <>
