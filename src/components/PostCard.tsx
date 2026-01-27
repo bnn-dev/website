@@ -1,4 +1,4 @@
-import { TransitionLink } from './TransitionLink';
+import { Link } from 'waku';
 import type { PostFrontmatter } from '../lib/frontmatter';
 
 interface Post extends PostFrontmatter {
@@ -11,7 +11,7 @@ interface PostCardProps {
 
 export function PostCard({ post }: PostCardProps) {
     return (
-        <TransitionLink to={`/blog/${post.slug}`} className="blog-post-card" preserveSearch>
+        <Link to={`/blog/${post.slug}`} className="blog-post-card">
             <div className="post-date">{post.date}</div>
             <h2 className="post-title">{post.title}</h2>
             <p className="post-excerpt">{post.excerpt}</p>
@@ -20,6 +20,6 @@ export function PostCard({ post }: PostCardProps) {
                     <span key={tag} className="tag">{tag}</span>
                 ))}
             </div>
-        </TransitionLink>
+        </Link>
     );
 }
