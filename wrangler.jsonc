@@ -1,0 +1,10 @@
+{
+  "name": "bogdan-nikolov-portfolio",
+  "compatibility_date": "2025-11-17",
+  "compatibility_flags": ["nodejs_als"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist/public",
+    "html_handling": "drop-trailing-slash"
+  }
+}
