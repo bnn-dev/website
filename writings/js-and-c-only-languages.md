@@ -90,7 +90,7 @@ Here's what nobody tells you: JavaScript isn't just "the easy language for websi
 
 - **Event-driven architecture.** The foundation of literally every modern system. Microservices? Event-driven. Serverless? Event-driven. React's entire mental model? Event-driven. JavaScript forces you to think in events, and that's how the world actually works.
 
-- **Dynamic typing.** Flexibility and the beautiful chaos that comes with it. You learn to embrace runtime surprises. You learn defensive programming. You learn why type systems exist by experiencing what happens when they don't. As [Tsoding famously pointed out](https://youtube.com/shorts/1E74_0MSKNU?si=MegA8UVo5_jk5B-x): JavaScript has no built-in type system, which is why Microsoft created TypeScript—a billion-dollar company's solution to add the type safety that C has had since 1972.
+- **Dynamic typing.** Flexibility and the beautiful chaos that comes with it. You learn to embrace runtime surprises. You learn defensive programming. You learn why type systems exist by experiencing what happens when they don't. As [Tsoding famously pointed out](https://youtube.com/shorts/1E74_0MSKNU?si=MegA8UVo5_jk5B-x): JavaScript has no built-in type system, which is why Microsoft created TypeScript - a billion-dollar company's solution to add the type safety that C has had since 1972.
 
 - **Prototype-based OOP.** Everyone learns class-based OOP in school (Java, C++, Python). JavaScript says "nah, we're doing prototypes." It's weird. It's confusing. But it teaches you that there's more than one way to think about objects and inheritance.
 
