@@ -85,17 +85,11 @@ body {
 }
 
 .cross {
-  font-size: 3.5rem;
+  width: 3.5rem;
+  height: auto;
   color: #c41e3a;
-  margin-bottom: 1rem;
-  line-height: 1;
-  display: inline-block;
-  text-align: center;
-  width: 100%;
-  /* Force text rendering instead of emoji (prevents purple border on mobile) */
-  font-family: 'Segoe UI Symbol', 'Noto Sans Symbols', serif;
-  font-variant: normal;
-  font-style: normal;
+  margin: 0 auto 1rem;
+  display: block;
 }
 
 .name {
@@ -718,7 +712,7 @@ body {
   }
 
   .cross {
-    font-size: 2.5rem;
+    width: 2.5rem;
   }
 
   .subtitle {
