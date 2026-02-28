@@ -22,9 +22,15 @@ export default async function HomePage() {
                 </nav>
                 <div className="projects">
                     <span className="projects-label">Projects</span>
-                    <a href="https://sift.bnn.dev" className="project-link" target="_blank" rel="noopener noreferrer">
-                        S<span className="project-accent">I</span>FT
-                    </a>
+                    <span className="projects-list">
+                        <a href="https://sift.bnn.dev" className="project-link" target="_blank" rel="noopener noreferrer">
+                            S<span className="project-accent">I</span>FT
+                        </a>
+                        <a href="https://eve.bnn.dev" className="project-link" target="_blank" rel="noopener noreferrer">
+                            <span className="project-accent">E</span>VE
+                            <span className="project-wip">WIP</span>
+                        </a>
+                    </span>
                 </div>
             </div>
         </div>
