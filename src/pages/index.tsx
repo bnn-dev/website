@@ -1,6 +1,13 @@
 import { Link } from 'waku';
 import { OrthodoxCross } from '../components/OrthodoxCross';
 
+const projects = [
+  { name: 'cherri', url: 'https://github.com/0xr3ngar/cherri', accentAt: 2 },
+  { name: 'voidsync', url: 'https://github.com/0xr3ngar/voidsync', accentAt: 4 },
+  { name: 'SIFT', url: 'https://sift.bnn.dev', accentAt: 1 },
+  { name: 'EVE', url: 'https://eve.bnn.dev', accentAt: 0, wip: true },
+];
+
 export default async function HomePage() {
     return (
         <div className="home-container">
@@ -23,13 +30,14 @@ export default async function HomePage() {
                 <div className="projects">
                     <span className="projects-label">Projects</span>
                     <span className="projects-list">
-                        <a href="https://sift.bnn.dev" className="project-link" target="_blank" rel="noopener noreferrer">
-                            S<span className="project-accent">I</span>FT
-                        </a>
-                        <a href="https://eve.bnn.dev" className="project-link" target="_blank" rel="noopener noreferrer">
-                            <span className="project-accent">E</span>VE
-                            <span className="project-wip">WIP</span>
-                        </a>
+                        {projects.map((p) => (
+                            <a key={p.name} href={p.url} className="project-link" target="_blank" rel="noopener noreferrer">
+                                {p.name.slice(0, p.accentAt)}
+                                <span className="project-accent">{p.name[p.accentAt]}</span>
+                                {p.name.slice(p.accentAt + 1)}
+                                {p.wip && <span className="project-wip">WIP</span>}
+                            </a>
+                        ))}
                     </span>
                 </div>
             </div>
