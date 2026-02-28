@@ -395,6 +395,8 @@ body {
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 4rem;
+  position: relative;
+  z-index: 10;
 }
 
 /* Blog Header */
