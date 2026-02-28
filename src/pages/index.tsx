@@ -25,6 +25,12 @@ export default async function HomePage() {
                         LinkedIn
                     </a>
                 </nav>
+                <div className="projects">
+                    <span className="projects-label">Projects</span>
+                    <a href="https://sift.bnn.dev" className="project-link" target="_blank" rel="noopener noreferrer">
+                        S<span className="project-accent">I</span>FT
+                    </a>
+                </div>
             </div>
         </div>
     );
