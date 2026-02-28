@@ -278,6 +278,12 @@ body {
   gap: 0.5rem;
 }
 
+.projects-list {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
 .projects-label {
   font-size: 0.7rem;
   letter-spacing: 0.15em;
@@ -300,6 +306,18 @@ body {
 
 .project-accent {
   color: #c41e3a;
+}
+
+.project-wip {
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  color: #c41e3a;
+  opacity: 0.5;
+  border: 1px solid rgba(196, 30, 58, 0.2);
+  border-radius: 3px;
+  padding: 1px 5px;
+  margin-left: 6px;
+  vertical-align: middle;
 }
 
 /* Page Navigation (for blog pages) */
