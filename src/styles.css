@@ -308,6 +308,10 @@ body {
   background: rgba(255, 255, 255, 0.02);
 }
 
+.projects-list .project-link:hover .project-accent {
+  color: #ff2d4d;
+}
+
 .projects-list .project-link + .project-link::before {
   content: "";
   display: block;
