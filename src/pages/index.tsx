@@ -1,6 +1,12 @@
 import { Link } from 'waku';
 import { OrthodoxCross } from '../components/OrthodoxCross';
 
+const links = [
+  { name: 'gh', url: 'https://github.com/0xr3ngar' },
+  { name: 'x', url: 'https://x.com/0xr3ngar' },
+  { name: 'li', url: 'https://www.linkedin.com/in/bogdan-nikolov/' },
+];
+
 export default async function HomePage() {
     return (
         <div className="home-container">
@@ -10,15 +16,11 @@ export default async function HomePage() {
                 <h1 className="name">Bogdan Nikolov</h1>
                 <p className="quote">Simplicity is the ultimate sophistication</p>
                 <nav className="links">
-                    <a href="https://github.com/0xr3ngar" className="link link-left" target="_blank" rel="noopener noreferrer">
-                        GitHub
-                    </a>
-                    <a href="https://x.com/0xr3ngar" className="link link-center" target="_blank" rel="noopener noreferrer">
-                        X
-                    </a>
-                    <a href="https://www.linkedin.com/in/bogdan-nikolov/" className="link link-right" target="_blank" rel="noopener noreferrer">
-                        LinkedIn
-                    </a>
+                    {links.map((l) => (
+                        <a key={l.name} href={l.url} className="link" target="_blank" rel="noopener noreferrer">
+                            {l.name}
+                        </a>
+                    ))}
                 </nav>
             </div>
         </div>

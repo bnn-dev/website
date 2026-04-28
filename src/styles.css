@@ -244,30 +244,22 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 2.5rem;
 }
 
 .link {
   color: #666;
   text-decoration: none;
-  font-size: 1.25rem;
-  font-weight: 400;
-  letter-spacing: 0.02em;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   transition: color 0.3s ease;
   position: relative;
+  padding: 0.25rem 0.25rem;
 }
 
 .link:hover {
   color: #c41e3a;
-}
-
-.link-left,
-.link-right {
-  width: 100px;
-  text-align: center;
-}
-
-.link-center {
-  margin: 0 2.5rem;
 }
 
 /* Page Navigation (for blog pages) */
@@ -825,20 +817,10 @@ body {
   }
 
   .links {
-    flex-direction: row;
-    gap: 1.5rem;
+    gap: 1.75rem;
   }
 
   .link {
     font-size: 1rem;
-  }
-
-  .link-left,
-  .link-right {
-    width: auto;
-  }
-
-  .link-center {
-    margin: 0;
   }
 }
