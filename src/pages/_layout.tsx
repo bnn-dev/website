@@ -1,5 +1,22 @@
 import '../styles.css';
 
+const particles = [
+  { left: '8%', bottom: '15%', duration: '9s', delay: '0s' },
+  { left: '15%', bottom: '40%', duration: '11s', delay: '0.4s' },
+  { left: '22%', bottom: '8%', duration: '13s', delay: '0.8s' },
+  { left: '30%', bottom: '55%', duration: '10s', delay: '0.2s' },
+  { left: '38%', bottom: '20%', duration: '14s', delay: '1.1s' },
+  { left: '45%', bottom: '70%', duration: '12s', delay: '0.5s' },
+  { left: '52%', bottom: '5%', duration: '15s', delay: '0.9s' },
+  { left: '60%', bottom: '35%', duration: '11s', delay: '1.4s' },
+  { left: '68%', bottom: '60%', duration: '13s', delay: '0.6s' },
+  { left: '75%', bottom: '15%', duration: '16s', delay: '1.2s' },
+  { left: '82%', bottom: '45%', duration: '10s', delay: '0.3s' },
+  { left: '88%', bottom: '25%', duration: '14s', delay: '1.6s' },
+  { left: '94%', bottom: '65%', duration: '12s', delay: '0.7s' },
+  { left: '4%', bottom: '70%', duration: '15s', delay: '1.0s' },
+];
+
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
@@ -19,12 +36,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <div className="bg-grain" />
       <div className="bg-scanlines" />
       <div className="bg-particles">
-        <div className="particle" style={{ left: '15%', bottom: '10%', animationDuration: '8s', animationDelay: '0s' }} />
-        <div className="particle" style={{ left: '30%', bottom: '30%', animationDuration: '10s', animationDelay: '1.5s' }} />
-        <div className="particle" style={{ left: '45%', bottom: '50%', animationDuration: '12s', animationDelay: '3s' }} />
-        <div className="particle" style={{ left: '60%', bottom: '10%', animationDuration: '14s', animationDelay: '4.5s' }} />
-        <div className="particle" style={{ left: '75%', bottom: '30%', animationDuration: '16s', animationDelay: '6s' }} />
-        <div className="particle" style={{ left: '90%', bottom: '50%', animationDuration: '18s', animationDelay: '7.5s' }} />
+        {particles.map((p, i) => (
+          <div
+            key={i}
+            className="particle"
+            style={{ left: p.left, bottom: p.bottom, animationDuration: p.duration, animationDelay: p.delay }}
+          />
+        ))}
       </div>
       {children}
     </>
