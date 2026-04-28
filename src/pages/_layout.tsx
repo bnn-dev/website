@@ -13,8 +13,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         rel="stylesheet"
       />
       <div className="bg-layer">
-        <div className="bg-glow-center" />
-        <div className="bg-glow-top" />
         <div className="bg-grid" />
       </div>
       <div className="bg-vignette" />
