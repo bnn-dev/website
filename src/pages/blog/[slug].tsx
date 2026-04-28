@@ -2,7 +2,9 @@ import type { PageProps } from 'waku/router';
 import { Link } from 'waku';
 import { PageNav } from '../../components/PageNav';
 import { MarkdownContent } from '../../components/MarkdownContent';
+import { TableOfContents } from '../../components/TableOfContents';
 import { getPostBySlug, getAllSlugs } from '../../lib/posts';
+import { extractHeadings } from '../../lib/headings';
 
 export default async function BlogPostPage({ slug }: PageProps<'/blog/[slug]'>) {
     const post = getPostBySlug(slug);
@@ -21,12 +23,15 @@ export default async function BlogPostPage({ slug }: PageProps<'/blog/[slug]'>) 
         );
     }
 
+    const headings = extractHeadings(post.content);
+
     return (
         <>
             <PageNav>
                 <Link to="/" className="page-nav-link">← Home</Link>
                 <Link to="/blog" className="page-nav-link">← Blog</Link>
             </PageNav>
+            <TableOfContents headings={headings} />
             <main className="main">
                 <article className="post-header">
                     <h1 className="post-view-title">{post.title}</h1>
