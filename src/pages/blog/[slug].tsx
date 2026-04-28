@@ -13,8 +13,8 @@ export default async function BlogPostPage({ slug }: PageProps<'/blog/[slug]'>) 
         return (
             <>
                 <PageNav>
-                    <Link to="/" className="page-nav-link">← Home</Link>
-                    <Link to="/blog" className="page-nav-link">← Blog</Link>
+                    <Link to="/" className="page-nav-link">← home</Link>
+                    <Link to="/blog" className="page-nav-link">← blog</Link>
                 </PageNav>
                 <main className="main">
                     <h1>Post not found</h1>
@@ -28,8 +28,8 @@ export default async function BlogPostPage({ slug }: PageProps<'/blog/[slug]'>) 
     return (
         <>
             <PageNav>
-                <Link to="/" className="page-nav-link">← Home</Link>
-                <Link to="/blog" className="page-nav-link">← Blog</Link>
+                <Link to="/" className="page-nav-link">← home</Link>
+                <Link to="/blog" className="page-nav-link">← blog</Link>
             </PageNav>
             <TableOfContents headings={headings} />
             <main className="main">

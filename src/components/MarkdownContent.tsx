@@ -13,14 +13,12 @@ interface MarkdownContentProps {
 const customTheme: { [key: string]: React.CSSProperties } = {
     'code[class*="language-"]': {
         color: '#d4d4d8',
-        fontFamily: "'Monaco', 'Menlo', monospace",
         fontSize: '0.9em',
         lineHeight: '1.7',
         textShadow: 'none',
     },
     'pre[class*="language-"]': {
         color: '#d4d4d8',
-        fontFamily: "'Monaco', 'Menlo', monospace",
         fontSize: '0.9em',
         lineHeight: '1.7',
         textShadow: 'none',

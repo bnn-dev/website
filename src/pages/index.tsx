@@ -10,7 +10,7 @@ const links = [
 export default async function HomePage() {
     return (
         <div className="home-container">
-            <Link to="/blog" className="right-link">Blog →</Link>
+            <Link to="/blog" className="right-link">blog →</Link>
             <div className="home-content">
                 <OrthodoxCross className="cross" />
                 <h1 className="name">Bogdan Nikolov</h1>

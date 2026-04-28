@@ -25,7 +25,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       <link
         rel="preload"
-        href="/fonts/inter-latin.woff2"
+        href="/fonts/jetbrains-mono-latin.woff2"
         as="font"
         type="font/woff2"
         crossOrigin="anonymous"

@@ -8,7 +8,7 @@ interface PageNavProps {
 
 export function PageNav({ children }: PageNavProps) {
     return (
-        <nav className="page-nav" view-transiton-name="page-nav">
+        <nav className="page-nav">
             {children}
         </nav>
     );
