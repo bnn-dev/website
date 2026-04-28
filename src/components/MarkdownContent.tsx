@@ -3,6 +3,8 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { slugify } from '../lib/headings';
+import { HeadingAnchor } from './HeadingAnchor';
 
 interface MarkdownContentProps {
     content: string;
@@ -69,6 +71,18 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
             <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
+                    h1: ({ children }) => {
+                        const id = slugify(String(children));
+                        return <h1 id={id}>{children}<HeadingAnchor id={id} /></h1>;
+                    },
+                    h2: ({ children }) => {
+                        const id = slugify(String(children));
+                        return <h2 id={id}>{children}<HeadingAnchor id={id} /></h2>;
+                    },
+                    h3: ({ children }) => {
+                        const id = slugify(String(children));
+                        return <h3 id={id}>{children}<HeadingAnchor id={id} /></h3>;
+                    },
                     code({ className, children, ...props }) {
                         const match = /language-(\w+)/.exec(className ?? '');
                         const codeString = String(children).replace(/\n$/, '');

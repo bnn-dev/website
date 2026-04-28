@@ -623,6 +623,41 @@ body {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: 500;
+  scroll-margin-top: 6rem;
+}
+
+.heading-anchor {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 0.55rem;
+  cursor: pointer;
+  color: #555;
+  opacity: 0;
+  transition: opacity 0.2s ease, color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  position: relative;
+  top: -0.05em;
+}
+
+.markdown-content h1:hover .heading-anchor,
+.markdown-content h2:hover .heading-anchor,
+.markdown-content h3:hover .heading-anchor,
+.heading-anchor:focus-visible {
+  opacity: 0.6;
+}
+
+.heading-anchor:hover {
+  opacity: 1;
+  color: #c41e3a;
+}
+
+.heading-anchor svg {
+  width: 1.4em;
+  height: 1.4em;
+  fill: currentColor;
 }
 
 .markdown-content h1 {
