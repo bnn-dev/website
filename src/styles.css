@@ -247,7 +247,6 @@ body {
 
 .writings-masthead {
   margin-bottom: 4rem;
-  animation: writings-enter 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
 }
 
 .writings-title {
@@ -272,7 +271,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  animation: writings-enter 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s backwards;
 }
 
 .entry {
@@ -348,7 +346,6 @@ body {
   margin-top: 6rem;
   display: flex;
   justify-content: center;
-  animation: writings-enter 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s backwards;
 }
 
 .writings-cross {
@@ -360,11 +357,6 @@ body {
 
 .writings-colophon:hover .writings-cross {
   color: #c41e3a;
-}
-
-@keyframes writings-enter {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Post Page */
