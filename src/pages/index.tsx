@@ -14,7 +14,6 @@ export default async function HomePage() {
             <div className="home-content">
                 <OrthodoxCross className="cross" />
                 <h1 className="name">Bogdan Nikolov</h1>
-                <p className="quote">Simplicity is the ultimate sophistication</p>
                 <nav className="links">
                     {links.map((l) => (
                         <a key={l.name} href={l.url} className="link" target="_blank" rel="noopener noreferrer">
