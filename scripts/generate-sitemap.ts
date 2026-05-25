@@ -39,12 +39,17 @@ function extractFrontmatter(content: string): Record<string, string> {
 }
 
 function toISODate(dateStr: string): string {
-  const d = new Date(dateStr + ' 12:00:00 UTC');
+  // Handle formats like "May 25, 2026" or "January 26, 2026"
+  const d = new Date(dateStr);
   if (isNaN(d.getTime())) {
     console.warn(`  ⚠️  Could not parse date "${dateStr}", using today's date`);
     return new Date().toISOString().split('T')[0];
   }
-  return d.toISOString().split('T')[0];
+  // Use UTC date parts to avoid timezone shifting the day
+  const year = d.getUTCFullYear();
+  const month = String(d.getUTCMonth() + 1).padStart(2, '0');
+  const day = String(d.getUTCDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
 }
 
 async function getPosts(): Promise<Post[]> {

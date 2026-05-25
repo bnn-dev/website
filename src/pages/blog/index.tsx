@@ -2,6 +2,7 @@ import { Link } from 'waku';
 import { PageNav } from '../../components/PageNav';
 import { OrthodoxCross } from '../../components/OrthodoxCross';
 import { getAllPosts } from '../../lib/posts';
+import { SEO } from '../../components/SEO';
 
 function fmt(date: string) {
     const d = new Date(date);
@@ -18,20 +19,12 @@ export default async function BlogPage() {
 
     return (
         <>
-            {/* SEO */}
-            <title>Blog | bnn.dev</title>
-            <meta
-                name="description"
-                content="Thoughts on software, security, and life. Personal essays by Bogdan Nikolov."
+            <SEO
+                title="Blog"
+                description="Thoughts on software, security, and life. Personal essays by Bogdan Nikolov."
+                url="/blog"
+                ogType="website"
             />
-            <link rel="canonical" href="https://bnn.dev/blog" />
-            <meta property="og:title" content="Blog | bnn.dev" />
-            <meta
-                property="og:description"
-                content="Thoughts on software, security, and life. Personal essays by Bogdan Nikolov."
-            />
-            <meta property="og:url" content="https://bnn.dev/blog" />
-            <meta property="og:type" content="website" />
 
             <PageNav>
                 <Link to="/" className="page-nav-link">← home</Link>

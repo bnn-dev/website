@@ -20,8 +20,6 @@ const particles = [
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       <link
         rel="preload"
@@ -31,9 +29,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         crossOrigin="anonymous"
       />
 
-      {/* Global head elements only — per-page title/description/og tags live in the individual pages */}
+      {/* Global head elements. Per-page title, description, OG, Twitter, and JSON-LD
+          are rendered via the <SEO /> component in individual pages for reliable hoisting. */}
       <meta name="author" content="Bogdan Nikolov" />
-      <meta property="og:site_name" content="bnn.dev" />
 
       <div className="bg-layer">
         <div className="bg-grid" />

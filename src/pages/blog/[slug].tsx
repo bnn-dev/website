@@ -5,6 +5,7 @@ import { MarkdownContent } from '../../components/MarkdownContent';
 import { TableOfContents } from '../../components/TableOfContents';
 import { getPostBySlug, getAllSlugs } from '../../lib/posts';
 import { extractHeadings } from '../../lib/headings';
+import { SEO } from '../../components/SEO';
 
 export default async function BlogPostPage({ slug }: PageProps<'/blog/[slug]'>) {
     const post = getPostBySlug(slug);
@@ -12,9 +13,12 @@ export default async function BlogPostPage({ slug }: PageProps<'/blog/[slug]'>) 
     if (!post) {
         return (
             <>
-                <title>Post not found | bnn.dev</title>
-                <meta name="description" content="The requested post could not be found." />
-                <link rel="canonical" href="https://bnn.dev/blog" />
+                <SEO
+                    title="Post not found"
+                    description="The requested post could not be found."
+                    url="/blog"
+                    noIndex={true}
+                />
 
                 <PageNav>
                     <Link to="/" className="page-nav-link">← home</Link>
@@ -28,30 +32,18 @@ export default async function BlogPostPage({ slug }: PageProps<'/blog/[slug]'>) 
     }
 
     const headings = extractHeadings(post.content);
-
     const postDateISO = new Date(post.date).toISOString();
 
     return (
         <>
-            {/* Dynamic SEO for this post */}
-            <title>{post.title} | bnn.dev</title>
-            <meta name="description" content={post.excerpt} />
-            <link rel="canonical" href={`https://bnn.dev/blog/${slug}`} />
-
-            {/* Open Graph Article */}
-            <meta property="og:title" content={post.title} />
-            <meta property="og:description" content={post.excerpt} />
-            <meta property="og:type" content="article" />
-            <meta property="og:url" content={`https://bnn.dev/blog/${slug}`} />
-            <meta property="og:article:published_time" content={postDateISO} />
-            {post.tags.map((tag) => (
-                <meta key={tag} property="og:article:tag" content={tag} />
-            ))}
-
-            {/* Twitter */}
-            <meta name="twitter:card" content="summary" />
-            <meta name="twitter:title" content={post.title} />
-            <meta name="twitter:description" content={post.excerpt} />
+            <SEO
+                title={post.title}
+                description={post.excerpt}
+                url={`/blog/${slug}`}
+                ogType="article"
+                publishedTime={postDateISO}
+                tags={post.tags}
+            />
 
             <PageNav>
                 <Link to="/" className="page-nav-link">← home</Link>
