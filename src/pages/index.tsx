@@ -9,11 +9,21 @@ const links = [
 
 export default async function HomePage() {
     return (
-        <div className="home-container">
-            <Link to="/blog" className="right-link">blog →</Link>
-            <div className="home-content">
-                <OrthodoxCross className="cross" />
-                <h1 className="name">Bogdan Nikolov</h1>
+        <>
+            {/* Page-specific SEO (overrides layout defaults) */}
+            <title>Bogdan Nikolov | Software, Faith &amp; Writing</title>
+            <meta
+                property="og:title"
+                content="Bogdan Nikolov | Software, Faith &amp; Writing"
+            />
+            <meta property="og:url" content="https://bnn.dev/" />
+            <link rel="canonical" href="https://bnn.dev/" />
+
+            <div className="home-container">
+                <Link to="/blog" className="right-link">blog →</Link>
+                <div className="home-content">
+                    <OrthodoxCross className="cross" />
+                    <h1 className="name">Bogdan Nikolov</h1>
                 <nav className="links">
                     {links.map((l) => (
                         <a key={l.name} href={l.url} className="link" target="_blank" rel="noopener noreferrer">
@@ -23,6 +33,7 @@ export default async function HomePage() {
                 </nav>
             </div>
         </div>
+        </>
     );
 }
 

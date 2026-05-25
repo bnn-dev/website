@@ -18,6 +18,21 @@ export default async function BlogPage() {
 
     return (
         <>
+            {/* SEO */}
+            <title>Blog | bnn.dev</title>
+            <meta
+                name="description"
+                content="Thoughts on software, security, and life. Personal essays by Bogdan Nikolov."
+            />
+            <link rel="canonical" href="https://bnn.dev/blog" />
+            <meta property="og:title" content="Blog | bnn.dev" />
+            <meta
+                property="og:description"
+                content="Thoughts on software, security, and life. Personal essays by Bogdan Nikolov."
+            />
+            <meta property="og:url" content="https://bnn.dev/blog" />
+            <meta property="og:type" content="website" />
+
             <PageNav>
                 <Link to="/" className="page-nav-link">← home</Link>
             </PageNav>

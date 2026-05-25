@@ -4,8 +4,9 @@
   "type": "module",
   "scripts": {
     "dev": "waku dev",
-    "build": "CLOUDFLARE=1 waku build",
+    "build": "bun run generate-sitemap && CLOUDFLARE=1 waku build",
     "start": "waku start",
+    "generate-sitemap": "bun scripts/generate-sitemap.ts",
     "cf-dev": "wrangler dev",
     "cf-deploy": "wrangler deploy",
     "cf-typegen": "wrangler types"

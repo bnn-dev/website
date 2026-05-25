@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Prevent indexing of Waku RSC payloads
+Disallow: /RSC/
+
+Sitemap: https://bnn.dev/sitemap.xml
