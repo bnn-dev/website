@@ -31,31 +31,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         crossOrigin="anonymous"
       />
 
-      {/* SEO & Social Meta */}
-      <title>Bogdan Nikolov | bnn.dev</title>
-      <meta
-        name="description"
-        content="Personal website and blog of Bogdan Nikolov. Writing on software, security, faith, and the examined life."
-      />
+      {/* Global head elements only — per-page title/description/og tags live in the individual pages */}
       <meta name="author" content="Bogdan Nikolov" />
-
-      {/* Open Graph */}
-      <meta property="og:title" content="Bogdan Nikolov | bnn.dev" />
-      <meta
-        property="og:description"
-        content="Personal website and blog of Bogdan Nikolov. Writing on software, security, faith, and the examined life."
-      />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://bnn.dev/" />
       <meta property="og:site_name" content="bnn.dev" />
-
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:title" content="Bogdan Nikolov | bnn.dev" />
-      <meta
-        name="twitter:description"
-        content="Personal website and blog of Bogdan Nikolov. Writing on software, security, faith, and the examined life."
-      />
 
       <div className="bg-layer">
         <div className="bg-grid" />

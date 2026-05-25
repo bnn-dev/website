@@ -34,6 +34,7 @@ export default async function BlogPostPage({ slug }: PageProps<'/blog/[slug]'>) 
     return (
         <>
             {/* Dynamic SEO for this post */}
+            <title>{post.title} | bnn.dev</title>
             <meta name="description" content={post.excerpt} />
             <link rel="canonical" href={`https://bnn.dev/blog/${slug}`} />
 

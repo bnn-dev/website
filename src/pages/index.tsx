@@ -10,11 +10,19 @@ const links = [
 export default async function HomePage() {
     return (
         <>
-            {/* Page-specific SEO (overrides layout defaults) */}
+            {/* Page-specific SEO */}
             <title>Bogdan Nikolov | Software, Faith &amp; Writing</title>
+            <meta
+                name="description"
+                content="Personal website and blog of Bogdan Nikolov. Writing on software, security, faith, and the examined life."
+            />
             <meta
                 property="og:title"
                 content="Bogdan Nikolov | Software, Faith &amp; Writing"
+            />
+            <meta
+                property="og:description"
+                content="Personal website and blog of Bogdan Nikolov. Writing on software, security, faith, and the examined life."
             />
             <meta property="og:url" content="https://bnn.dev/" />
             <link rel="canonical" href="https://bnn.dev/" />
