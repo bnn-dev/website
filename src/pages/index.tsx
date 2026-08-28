@@ -1,12 +1,12 @@
 import { Link } from 'waku';
 import { OrthodoxCross } from '../components/OrthodoxCross';
+import { GitHubIcon, XIcon } from '../components/icons';
 import { SEO } from '../components/SEO';
 import { BASE_URL } from '../lib/seo';
 
 const links = [
-  { name: 'gh', url: 'https://github.com/0xr3ngar' },
-  { name: 'x', url: 'https://x.com/0xr3ngar' },
-  { name: 'li', url: 'https://www.linkedin.com/in/bogdan-nikolov/' },
+  { name: 'github', url: 'https://github.com/0xr3ngar', Icon: GitHubIcon },
+  { name: 'x', url: 'https://x.com/0xr3ngar', Icon: XIcon },
 ];
 
 export default async function HomePage() {
@@ -25,9 +25,9 @@ export default async function HomePage() {
                     <OrthodoxCross className="cross" />
                     <h1 className="name">Bogdan Nikolov</h1>
                 <nav className="links">
-                    {links.map((l) => (
-                        <a key={l.name} href={l.url} className="link" target="_blank" rel="noopener noreferrer">
-                            {l.name}
+                    {links.map(({ name, url, Icon }) => (
+                        <a key={name} href={url} className="link" target="_blank" rel="noopener noreferrer" aria-label={name}>
+                            <Icon className="link-icon" />
                         </a>
                     ))}
                 </nav>

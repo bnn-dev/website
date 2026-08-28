@@ -53,7 +53,6 @@ export function SEO({
           sameAs: [
             'https://github.com/0xr3ngar',
             'https://x.com/0xr3ngar',
-            'https://www.linkedin.com/in/bogdan-nikolov/',
           ],
         };
 
